@@ -17,20 +17,16 @@ class App extends Component {
 
     this.state = {
       show: false,
-      show1:false,
-      
-     
+      show1: false,
+
       textShown: -1,
       lengthMore: false,
-
-      
 
       angle: '90deg',
       angle1: '90deg',
 
       count: 1,
       count1: 1,
-
     };
   }
 
@@ -60,337 +56,327 @@ class App extends Component {
   render(index) {
     return (
       <ScrollView style={styles.container}>
-        <View style={{ marginBottom:50}}>
-        <View style={styles.header}>
-          <View style={styles.headerView}>
-            <Image
-              source={require('./Assets/Images/logo.jpg')}
-              style={styles.image}
-            />
-          </View>
-          <View style={styles.headerView}>
-            <Text
-              style={{
-                marginHorizontal:15,
-                fontSize: 20,
-                color: '#171717',
-              }}>
-              How to clear FRA without coaching - Vision IAS
-            </Text>
-            <TouchableOpacity>
-            <View style={styles.video}>
-              <Icon name="play" size={20} color="#FD5D5D" style={styles.icon} />
+        <View style={{marginBottom: 50}}>
+          <View style={styles.header}>
+            <View style={styles.headerView}>
+              <Image
+                source={require('./Assets/Images/logo.jpg')}
+                style={styles.image}
+              />
+            </View>
+            <View style={styles.headerView}>
               <Text
                 style={{
-                  justifyContent: 'flex-start',
-                  //position: 'absolute',
-
-                  alignSelf: 'center',
+                  marginHorizontal: 15,
+                  fontSize: 20,
                   color: '#171717',
-                  fontSize: 18,
                 }}>
-                10 videos
+                How to clear FRA without coaching - Vision IAS
               </Text>
+              <TouchableOpacity>
+                <View style={styles.video}>
+                  <Icon
+                    name="play"
+                    size={20}
+                    color="#FD5D5D"
+                    style={styles.icon}
+                  />
+                  <Text
+                    style={{
+                      justifyContent: 'flex-start',
+                      //position: 'absolute',
+
+                      alignSelf: 'center',
+                      color: '#171717',
+                      fontSize: 18,
+                    }}>
+                    10 videos
+                  </Text>
+                </View>
+              </TouchableOpacity>
             </View>
-            </TouchableOpacity>
           </View>
-        </View>
-        <View
-          style={{
-            marginTop: 20,
-            marginHorizontal: 15,
-            borderBottomColor: '#DDDDDD',
-            borderBottomWidth: 1,
-          }}
-        />
 
-        <View style={{marginHorizontal: 15}}>
-          <Text style={{fontSize: 25,marginTop:15}}>Introduction</Text>
-          <Text
-            numberOfLines={this.state.textShown === index ? undefined : 3}
-            style={{
-              lineHeight: 25,
-              fontSize: 18,
-              color: '#808080',
-              textAlign: 'justify',
-            }}>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown took galley of type and
-            scrambled it to make a type specimen book. It has survived not only
-            five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus
-            PageMaker including versions of Lorem Ipsum.
-          </Text>
-          <Text
-            onPress={() => this.toggleNumberOfLines(index)}
-            style={{lineHeight: 21, color: 'red'}}>
-            {this.state.textShown === index ? 'See less' : 'See more'}
-          </Text>
-        </View>
-        <View style={styles.topics}>
-          <View
-            style={{
-              flexDirection: 'row',
-              justifyContent: 'space-evenly',
-              flex: 1 / 2,
-            }}>
+          <View style={styles.separator} />
+
+          <View style={{marginHorizontal: 15}}>
+            <Text style={{fontSize: 25, marginTop: 15}}>Introduction</Text>
             <Text
-              style={{
-                fontSize: 20,
-                alignSelf: 'flex-start',
-                justifyContent: 'flex-start',
-                alignItems: 'center',
-                marginLeft: 10,
-                marginTop: 10,
-              }}>
-              Fundamental Theorem of Arithmetic
+              numberOfLines={this.state.textShown === index ? undefined : 3}
+              style={styles.intro}>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown took galley of type and
+              scrambled it to make a type specimen book. It has survived not
+              only five centuries, but also the leap into electronic
+              typesetting, remaining essentially unchanged. It was popularised
+              in the 1960s with the release of Letraset sheets containing Lorem
+              Ipsum passages, and more recently with desktop publishing software
+              like Aldus PageMaker including versions of Lorem Ipsum.
             </Text>
-            <TouchableOpacity
-              style={{alignSelf: 'center', marginTop: 15}}
-              onPress={() => {
-                this.call_dropdown(this.state.count);
-              }}>
-              <Image
-                source={require('./Assets/Images/rightBack.png')}
-                style={{
-                  transform: [{rotate: this.state.angle}],
-                  height: 15,
-                  width: 30,
-                  tintColor: '#262F56',
-                }}
-              />
-            </TouchableOpacity>
+            <Text
+              onPress={() => this.toggleNumberOfLines(index)}
+              style={{lineHeight: 21, color: 'red'}}>
+              {this.state.textShown === index ? 'See less' : 'See more'}
+            </Text>
           </View>
-
-          <Text
-            style={{
-              fontSize: 16,
-              fontWeight: '400',
-              color: '#222222',
-              alignSelf: 'flex-start',
-              marginLeft: 10,
-              marginVertical: 5,
-            }}>
-            3 Tests
-          </Text>
-
-          {this.state.show ? (
-            <ScrollView
+          <View style={styles.topics}>
+            <View
               style={{
-                alignContent: 'center',
-                alignSelf: 'flex-start',
-                marginLeft: 5,
+                flexDirection: 'row',
+                justifyContent: 'space-evenly',
+                flex: 1 / 2,
               }}>
-              <View style={{flexDirection: 'row', paddingHorizontal: 25,marginTop:15}}>
-                <Icon
-                  name="unlock-alt"
-                  size={20}
-                  color="#00E29C"
-                  style={styles.icon}
-                />
-
-                <Text
+              <Text style={styles.title}>
+                Fundamental Theorem of Arithmetic
+              </Text>
+              <TouchableOpacity
+                style={{alignSelf: 'center', marginTop: 15}}
+                onPress={() => {
+                  this.call_dropdown(this.state.count);
+                }}>
+                <Image
+                  source={require('./Assets/Images/rightBack.png')}
                   style={{
-                    color: 'black',
-                    marginLeft:10,
-                    alignSelf: 'center',
-                    fontFamily: 'OpenSans',
-                    fontSize: 16,
-                    fontWeight: '600',
-                  }}>
-                  Prime factorization Exercise
-                </Text>
-              </View>
-              <View style={{flexDirection: 'row', paddingHorizontal: 25,marginTop:15}}>
-                <Icon
-                  name="unlock-alt"
-                  size={20}
-                  color="#00E29C"
-                  style={styles.icon}
+                    transform: [{rotate: this.state.angle}],
+                    height: 15,
+                    width: 30,
+                    tintColor: '#262F56',
+                  }}
                 />
+              </TouchableOpacity>
+            </View>
 
-                <Text
+            <Text style={styles.subtitle}>3 Tests</Text>
+
+            {this.state.show ? (
+              <ScrollView
+                style={{
+                  alignContent: 'center',
+                  alignSelf: 'flex-start',
+                  marginLeft: 5,
+                }}>
+                <View
                   style={{
-                    color: 'black',
-                    marginLeft:10,
-                    alignSelf: 'center',
-                    fontFamily: 'OpenSans',
-                    fontSize: 16,
-                    fontWeight: '600',
+                    flexDirection: 'row',
+                    paddingHorizontal: 25,
+                    marginTop: 15,
                   }}>
-                  Fill in the blanks
-                </Text>
-              </View>
-              <View style={{marginBottom:15}}>
-                <View style={{flexDirection: 'row', paddingHorizontal: 25,marginTop:15}}>
                   <Icon
-                    name="lock"
+                    name="unlock-alt"
                     size={20}
-                    color="#FD5D5D"
+                    color="#00E29C"
                     style={styles.icon}
                   />
 
                   <Text
                     style={{
                       color: 'black',
-                      marginLeft:10,
+                      marginLeft: 10,
                       alignSelf: 'center',
                       fontFamily: 'OpenSans',
                       fontSize: 16,
                       fontWeight: '600',
                     }}>
-                    Match the following
+                    Prime factorization Exercise
                   </Text>
                 </View>
-                <Text
+                <View
                   style={{
-                    color: '#808080',
-                   
-                    left: -25,
-                    alignSelf: 'center',
-                    fontFamily: 'OpenSans',
-                    fontSize: 16,
-                    fontWeight: '600',
+                    flexDirection: 'row',
+                    paddingHorizontal: 25,
+                    marginTop: 15,
                   }}>
-                  starts 14 March
-                </Text>
-              </View>
-            </ScrollView>
-          ) : null}
-        </View>
-        <View style={styles.topics}>
-          <View
-            style={{
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-            }}>
-            <Text
-              style={{
-                fontSize: 20,
-                alignSelf: 'flex-start',
-                justifyContent: 'flex-start',
-                alignItems: 'center',
-                marginLeft: 10,
-                marginTop: 10,
-              }}>
-              HCF and LCM
-            </Text>
-            <TouchableOpacity
-              style={{alignSelf: 'center', marginHorizontal: 15, marginTop: 15}}
-              onPress={() => {
-                this.chap(this.state.count1);
-              }}>
-              <Image
-                source={require('./Assets/Images/rightBack.png')}
-                style={{
-                  transform: [{rotate: this.state.angle1}],
-                  height: 15,
-                  width: 30,
-                  tintColor: '#262F56',
-                }}
-              />
-            </TouchableOpacity>
-          </View>
-
-          <Text
-            style={{
-              fontSize: 16,
-              fontWeight: '400',
-              color: '#222222',
-              alignSelf: 'flex-start',
-              marginLeft: 10,
-              marginVertical: 5,
-            }}>
-            10 Tests
-          </Text>
-
-          {this.state.show1 ? (
-            <ScrollView
-              style={{
-                alignContent: 'center',
-                alignSelf: 'flex-start',
-                marginLeft: 5,
-              }}>
-              <View style={{flexDirection: 'row', paddingHorizontal: 25,marginTop:15}}>
-                <Icon
-                  name="unlock-alt"
-                  size={20}
-                  color="#00E29C"
-                  style={styles.icon}
-                />
-
-                <Text
-                  style={{
-                    color: 'black',
-                    marginLeft:10,
-                    alignSelf: 'center',
-                    fontFamily: 'OpenSans',
-                    fontSize: 16,
-                    fontWeight: '600',
-                  }}>
-                  Prime factorization Exercise
-                </Text>
-              </View>
-              <View style={{flexDirection: 'row', paddingHorizontal: 25,marginTop:15}}>
-                <Icon
-                  name="unlock-alt"
-                  size={20}
-                  color="#00E29C"
-                  style={styles.icon}
-                />
-
-                <Text
-                  style={{
-                    color: 'black',
-                    marginLeft:10,
-                    alignSelf: 'center',
-                    fontFamily: 'OpenSans',
-                    fontSize: 16,
-                    fontWeight: '600',
-                  }}>
-                  Fill in the blanks
-                </Text>
-              </View>
-              <View style={{marginBottom:15}}>
-                <View style={{flexDirection: 'row', paddingHorizontal: 25,marginTop:15,}}>
                   <Icon
-                    name="lock"
+                    name="unlock-alt"
                     size={20}
-                    color="#FD5D5D"
+                    color="#00E29C"
                     style={styles.icon}
                   />
 
                   <Text
                     style={{
                       color: 'black',
-                      marginLeft:10,
+                      marginLeft: 10,
                       alignSelf: 'center',
                       fontFamily: 'OpenSans',
                       fontSize: 16,
                       fontWeight: '600',
                     }}>
-                    Match the following
+                    Fill in the blanks
                   </Text>
                 </View>
-                <Text
+                <View style={{marginBottom: 15}}>
+                  <View
+                    style={{
+                      flexDirection: 'row',
+                      paddingHorizontal: 25,
+                      marginTop: 15,
+                    }}>
+                    <Icon
+                      name="lock"
+                      size={20}
+                      color="#FD5D5D"
+                      style={styles.icon}
+                    />
+
+                    <Text
+                      style={{
+                        color: 'black',
+                        marginLeft: 10,
+                        alignSelf: 'center',
+                        fontFamily: 'OpenSans',
+                        fontSize: 16,
+                        fontWeight: '600',
+                      }}>
+                      Match the following
+                    </Text>
+                  </View>
+                  <Text
+                    style={{
+                      color: '#808080',
+
+                      left: -25,
+                      alignSelf: 'center',
+                      fontFamily: 'OpenSans',
+                      fontSize: 16,
+                      fontWeight: '600',
+                    }}>
+                    starts 14 March
+                  </Text>
+                </View>
+              </ScrollView>
+            ) : null}
+          </View>
+          <View style={styles.topics}>
+            <View
+              style={{
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+              }}>
+              <Text style={styles.title}>HCF and LCM</Text>
+              <TouchableOpacity
+                style={{
+                  alignSelf: 'center',
+                  marginHorizontal: 15,
+                  marginTop: 15,
+                }}
+                onPress={() => {
+                  this.chap(this.state.count1);
+                }}>
+                <Image
+                  source={require('./Assets/Images/rightBack.png')}
                   style={{
-                    color: '#808080',
-                    
-                    left: -25,
-                    alignSelf: 'center',
-                    fontFamily: 'OpenSans',
-                    fontSize: 16,
-                    fontWeight: '600',
+                    transform: [{rotate: this.state.angle1}],
+                    height: 15,
+                    width: 30,
+                    tintColor: '#262F56',
+                  }}
+                />
+              </TouchableOpacity>
+            </View>
+
+            <Text style={styles.subtitle}>10 Tests</Text>
+
+            {this.state.show1 ? (
+              <ScrollView
+                style={{
+                  alignContent: 'center',
+                  alignSelf: 'flex-start',
+                  marginLeft: 5,
+                }}>
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    paddingHorizontal: 25,
+                    marginTop: 15,
                   }}>
-                  starts 14 March
-                </Text>
-              </View>
-            </ScrollView>
-          ) : null}
-        </View>
+                  <Icon
+                    name="unlock-alt"
+                    size={20}
+                    color="#00E29C"
+                    style={styles.icon}
+                  />
+
+                  <Text
+                    style={{
+                      color: 'black',
+                      marginLeft: 10,
+                      alignSelf: 'center',
+                      fontFamily: 'OpenSans',
+                      fontSize: 16,
+                      fontWeight: '600',
+                    }}>
+                    Prime factorization Exercise
+                  </Text>
+                </View>
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    paddingHorizontal: 25,
+                    marginTop: 15,
+                  }}>
+                  <Icon
+                    name="unlock-alt"
+                    size={20}
+                    color="#00E29C"
+                    style={styles.icon}
+                  />
+
+                  <Text
+                    style={{
+                      color: 'black',
+                      marginLeft: 10,
+                      alignSelf: 'center',
+                      fontFamily: 'OpenSans',
+                      fontSize: 16,
+                      fontWeight: '600',
+                    }}>
+                    Fill in the blanks
+                  </Text>
+                </View>
+                <View style={{marginBottom: 15}}>
+                  <View
+                    style={{
+                      flexDirection: 'row',
+                      paddingHorizontal: 25,
+                      marginTop: 15,
+                    }}>
+                    <Icon
+                      name="lock"
+                      size={20}
+                      color="#FD5D5D"
+                      style={styles.icon}
+                    />
+
+                    <Text
+                      style={{
+                        color: 'black',
+                        marginLeft: 10,
+                        alignSelf: 'center',
+                        fontFamily: 'OpenSans',
+                        fontSize: 16,
+                        fontWeight: '600',
+                      }}>
+                      Match the following
+                    </Text>
+                  </View>
+                  <Text
+                    style={{
+                      color: '#808080',
+
+                      left: -25,
+                      alignSelf: 'center',
+                      fontFamily: 'OpenSans',
+                      fontSize: 16,
+                      fontWeight: '600',
+                    }}>
+                    starts 14 March
+                  </Text>
+                </View>
+              </ScrollView>
+            ) : null}
+          </View>
         </View>
       </ScrollView>
     );
@@ -401,7 +387,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white',
-  
   },
   header: {
     flex: 1 / 3,
@@ -416,7 +401,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'flex-start',
     marginTop: 15,
-    marginHorizontal:15,
+    marginHorizontal: 15,
   },
   image: {
     width: 180,
@@ -431,6 +416,34 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontFamily: 'OpenSans',
     margin: 20,
+  },
+  intro: {
+    lineHeight: 25,
+    fontSize: 18,
+    color: '#808080',
+    textAlign: 'justify',
+  },
+  separator: {
+    marginTop: 20,
+    marginHorizontal: 15,
+    borderBottomColor: '#DDDDDD',
+    borderBottomWidth: 1,
+  },
+  title: {
+    fontSize: 20,
+    alignSelf: 'flex-start',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    marginLeft: 10,
+    marginTop: 10,
+  },
+  subtitle: {
+    fontSize: 16,
+    fontWeight: '400',
+    color: '#222222',
+    alignSelf: 'flex-start',
+    marginLeft: 10,
+    marginVertical: 5,
   },
   button: {
     flexDirection: 'row',
@@ -447,7 +460,7 @@ const styles = StyleSheet.create({
   topics: {
     flex: 1,
     margin: 10,
-    marginTop:15,
+    marginTop: 15,
     borderColor: 'black',
     backgroundColor: '#F3FAFF',
     borderRadius: 10,
