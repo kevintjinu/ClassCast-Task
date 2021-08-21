@@ -1,16 +1,7 @@
 import React, {Component, memo, useState} from 'react';
-import {
-  Text,
-  View,
-  TouchableOpacity,
-  StyleSheet,
-  ScrollView,
-  Modal,
-  Image,
-} from 'react-native';
+import {Text, View, TouchableOpacity, ScrollView, Image} from 'react-native';
 
 import styles from './Assets/Styles';
-
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
 class App extends Component {
@@ -86,8 +77,6 @@ class App extends Component {
                   <Text
                     style={{
                       justifyContent: 'flex-start',
-                      //position: 'absolute',
-
                       alignSelf: 'center',
                       color: '#171717',
                       fontSize: 18,
@@ -366,7 +355,6 @@ class App extends Component {
                   <Text
                     style={{
                       color: '#808080',
-
                       left: -25,
                       alignSelf: 'center',
                       fontFamily: 'OpenSans',
@@ -384,7 +372,5 @@ class App extends Component {
     );
   }
 }
-
-
 
 export default memo(App);
